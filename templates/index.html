@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="../static/styles.css" />
+    <script src="../static/script.js" defer></script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <i class="fas fa-chart-line"></i>
+          <span>Themisto</span>
+        </div>
+        <div class="nav-menu">
+          <a href="#upload" class="nav-link">Upload</a>
+          <a href="#predict" class="nav-link">Predict</a>
+          <a href="#optimize" class="nav-link">Optimize</a>
+          <a href="#compare" class="nav-link">Compare</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1><i class="fas fa-chart-line"></i> Themisto</h1>
+            <h2>Intelligent Inventory Management</h2>
+            <div class="intro-content">
+              <h3>How It Works</h3>
+              <div class="steps">
+                <div class="step">
+                  <div class="step-number">1</div>
+                  <div class="step-text">
+                    <strong>Upload Dataset:</strong> Start by uploading your
+                    inventory data in CSV, Excel, or JSON format. Our system
+                    accepts various data structures.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-number">2</div>
+                  <div class="step-text">
+                    <strong>Predict Sales:</strong> Our advanced algorithms
+                    analyze your historical data to forecast future sales
+                    patterns and demand trends.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-number">3</div>
+                  <div class="step-text">
+                    <strong>Optimize Inventory:</strong> Input your current
+                    inventory size and get intelligent recommendations for
+                    optimal stock levels.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-number">4</div>
+                  <div class="step-text">
+                    <strong>Compare Results:</strong> View detailed
+                    before-and-after comparisons showing cost savings,
+                    efficiency improvements, and ROI metrics.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-image">
+            <svg viewBox="0 0 400 300" class="inventory-illustration">
+              <!-- Warehouse Building -->
+              <rect
+                x="50"
+                y="150"
+                width="300"
+                height="120"
+                fill="#34495e"
+                stroke="#2c3e50"
+                stroke-width="2"
+              />
+              <polygon
+                points="50,150 200,80 350,150"
+                fill="#e74c3c"
+                stroke="#c0392b"
+                stroke-width="2"
+              />
+
+              <!-- Warehouse Door -->
+              <rect x="160" y="200" width="80" height="70" fill="#2c3e50" />
+              <rect x="170" y="210" width="60" height="50" fill="#34495e" />
+
+              <!-- Windows -->
+              <rect
+                x="80"
+                y="180"
+                width="25"
+                height="25"
+                fill="#3498db"
+                opacity="0.7"
+              />
+              <rect
+                x="120"
+                y="180"
+                width="25"
+                height="25"
+                fill="#3498db"
+                opacity="0.7"
+              />
+              <rect
+                x="255"
+                y="180"
+                width="25"
+                height="25"
+                fill="#3498db"
+                opacity="0.7"
+              />
+              <rect
+                x="295"
+                y="180"
+                width="25"
+                height="25"
+                fill="#3498db"
+                opacity="0.7"
+              />
+
+              <!-- Inventory Boxes -->
+              <rect
+                x="70"
+                y="220"
+                width="20"
+                height="20"
+                fill="#f39c12"
+                stroke="#e67e22"
+                stroke-width="1"
+              />
+              <rect
+                x="95"
+                y="220"
+                width="20"
+                height="20"
+                fill="#27ae60"
+                stroke="#229954"
+                stroke-width="1"
+              />
+              <rect
+                x="70"
+                y="245"
+                width="20"
+                height="20"
+                fill="#9b59b6"
+                stroke="#8e44ad"
+                stroke-width="1"
+              />
+              <rect
+                x="95"
+                y="245"
+                width="20"
+                height="20"
+                fill="#e74c3c"
+                stroke="#c0392b"
+                stroke-width="1"
+              />
+
+              <rect
+                x="270"
+                y="220"
+                width="20"
+                height="20"
+                fill="#f39c12"
+                stroke="#e67e22"
+                stroke-width="1"
+              />
+              <rect
+                x="295"
+                y="220"
+                width="20"
+                height="20"
+                fill="#27ae60"
+                stroke="#229954"
+                stroke-width="1"
+              />
+              <rect
+                x="320"
+                y="220"
+                width="20"
+                height="20"
+                fill="#9b59b6"
+                stroke="#8e44ad"
+                stroke-width="1"
+              />
+              <rect
+                x="270"
+                y="245"
+                width="20"
+                height="20"
+                fill="#e74c3c"
+                stroke="#c0392b"
+                stroke-width="1"
+              />
+              <rect
+                x="295"
+                y="245"
+                width="20"
+                height="20"
+                fill="#3498db"
+                stroke="#2980b9"
+                stroke-width="1"
+              />
+
+              <!-- Analytics Chart -->
+              <rect
+                x="30"
+                y="30"
+                width="120"
+                height="80"
+                fill="white"
+                stroke="#bdc3c7"
+                stroke-width="2"
+                rx="5"
+              />
+              <polyline
+                points="40,90 60,70 80,50 100,40 120,35 140,30"
+                fill="none"
+                stroke="#27ae60"
+                stroke-width="3"
+              />
+              <circle cx="40" cy="90" r="3" fill="#27ae60" />
+              <circle cx="60" cy="70" r="3" fill="#27ae60" />
+              <circle cx="80" cy="50" r="3" fill="#27ae60" />
+              <circle cx="100" cy="40" r="3" fill="#27ae60" />
+              <circle cx="120" cy="35" r="3" fill="#27ae60" />
+              <circle cx="140" cy="30" r="3" fill="#27ae60" />
+
+              <!-- Optimization Arrow -->
+              <path
+                d="M 170 50 Q 200 20 230 50"
+                fill="none"
+                stroke="#f39c12"
+                stroke-width="4"
+                marker-end="url(#arrowhead)"
+              />
+              <defs>
+                <marker
+                  id="arrowhead"
+                  markerWidth="10"
+                  markerHeight="7"
+                  refX="9"
+                  refY="3.5"
+                  orient="auto"
+                >
+                  <polygon points="0 0, 10 3.5, 0 7" fill="#f39c12" />
+                </marker>
+              </defs>
+
+              <!-- Optimization Chart -->
+              <rect
+                x="250"
+                y="30"
+                width="120"
+                height="80"
+                fill="white"
+                stroke="#bdc3c7"
+                stroke-width="2"
+                rx="5"
+              />
+              <polyline
+                points="260,90 280,60 300,45 320,35 340,25 360,20"
+                fill="none"
+                stroke="#3498db"
+                stroke-width="3"
+              />
+              <circle cx="260" cy="90" r="3" fill="#3498db" />
+              <circle cx="280" cy="60" r="3" fill="#3498db" />
+              <circle cx="300" cy="45" r="3" fill="#3498db" />
+              <circle cx="320" cy="35" r="3" fill="#3498db" />
+              <circle cx="340" cy="25" r="3" fill="#3498db" />
+              <circle cx="360" cy="20" r="3" fill="#3498db" />
+
+              <!-- Floating Analytics Icons -->
+              <g opacity="0.8">
+                <circle
+                  cx="360"
+                  cy="140"
+                  r="15"
+                  fill="#ecf0f1"
+                  stroke="#bdc3c7"
+                />
+                <text
+                  x="360"
+                  y="147"
+                  text-anchor="middle"
+                  font-size="14"
+                  fill="#2c3e50"
+                >
+                  📊
+                </text>
+              </g>
+              <g opacity="0.8">
+                <circle
+                  cx="40"
+                  cy="140"
+                  r="15"
+                  fill="#ecf0f1"
+                  stroke="#bdc3c7"
+                />
+                <text
+                  x="40"
+                  y="147"
+                  text-anchor="middle"
+                  font-size="14"
+                  fill="#2c3e50"
+                >
+                  📈
+                </text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Dataset Upload Section -->
+        <section id="upload" class="upload-section">
+          <div class="section-header">
+            <h2><i class="fas fa-upload"></i> Dataset Upload</h2>
+            <p>Upload your historical dataset and input set to get started</p>
+          </div>
+          <form class="upload-form">
+            <div class="upload-grid">
+              <!-- Historical Dataset Upload -->
+              <div class="upload-card">
+                <div class="upload-card-header">
+                  <h3><i class="fas fa-database"></i> Historical Dataset</h3>
+                  <p>Past sales data for training</p>
+                </div>
+                <div class="file-upload-wrapper">
+                  <input
+                    type="file"
+                    id="dataset-file"
+                    name="dataset"
+                    accept=".csv,.xlsx,.json"
+                    required
+                  />
+                  <label
+                    for="dataset-file"
+                    class="file-upload-label dataset-label"
+                  >
+                    <i class="fas fa-chart-line"></i>
+                    <span>Choose Dataset</span>
+                    <small>CSV, Excel, JSON</small>
+                  </label>
+                </div>
+                <div class="upload-status">
+                  <p class="status-message dataset-status">No file selected</p>
+                </div>
+              </div>
+
+              <!-- Input Set Upload -->
+              <div class="upload-card">
+                <div class="upload-card-header">
+                  <h3><i class="fas fa-target"></i> Input Set</h3>
+                  <p>Data for predictions</p>
+                </div>
+                <div class="file-upload-wrapper">
+                  <input
+                    type="file"
+                    id="input-file"
+                    name="input-set"
+                    accept=".csv,.xlsx,.json"
+                    required
+                  />
+                  <label for="input-file" class="file-upload-label input-label">
+                    <i class="fas fa-crosshairs"></i>
+                    <span>Choose Input Set</span>
+                    <small>CSV, Excel, JSON</small>
+                  </label>
+                </div>
+                <div class="upload-status">
+                  <p class="status-message input-status">No file selected</p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <!-- Sales Prediction Section -->
+        <section id="predict" class="prediction-section">
+          <div class="section-header">
+            <h2><i class="fas fa-chart-line"></i> Sales Prediction</h2>
+            <p>Generate sales forecasts based on your data</p>
+          </div>
+          <form class="prediction-form">
+            <button type="submit" class="btn btn-primary predict-btn">
+              <i class="fas fa-magic"></i>
+              Predict Sales
+            </button>
+          </form>
+          <div class="prediction-results">
+            <div class="results-placeholder">
+              <i class="fas fa-chart-area"></i>
+              <p>
+                Sales prediction results will appear here after clicking
+                "Predict Sales"
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Inventory Optimization Section -->
+        <section id="optimize" class="optimization-section">
+          <div class="section-header">
+            <h2><i class="fas fa-cogs"></i> Inventory Optimization</h2>
+            <p>Optimize your inventory levels for maximum efficiency</p>
+          </div>
+          <form class="optimization-form">
+            <div class="input-group">
+              <label for="inventory-size">Current Inventory Size</label>
+              <input
+                type="number"
+                id="inventory-size"
+                name="inventory-size"
+                placeholder="Enter inventory size"
+                min="1"
+                required
+              />
+              <span class="input-icon"><i class="fas fa-warehouse"></i></span>
+            </div>
+            <button type="submit" class="btn btn-secondary optimize-btn">
+              <i class="fas fa-optimize"></i>
+              Optimize Inventory
+            </button>
+          </form>
+        </section>
+
+        <!-- Optimization Comparison Section -->
+        <section id="compare" class="comparison-section">
+          <div class="section-header">
+            <h2>
+              <i class="fas fa-balance-scale"></i> Optimization Comparison
+            </h2>
+            <p>Compare before and after optimization results</p>
+          </div>
+
+          <div class="comparison-grid">
+            <!-- Before Optimization -->
+            <div class="comparison-card before-card">
+              <div class="card-header">
+                <h3><i class="fas fa-history"></i> Before Optimization</h3>
+              </div>
+              <div class="card-content">
+                <div class="metrics-placeholder">
+                  <div class="metric-item">
+                    <span class="metric-label">Total Inventory Value:</span>
+                    <span class="metric-value">--</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Storage Costs:</span>
+                    <span class="metric-value">--</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Turnover Rate:</span>
+                    <span class="metric-value">--</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Stock Efficiency:</span>
+                    <span class="metric-value">--</span>
+                  </div>
+                </div>
+                <div class="empty-state">
+                  <i class="fas fa-inbox"></i>
+                  <p>
+                    Optimization data will appear here after running the
+                    optimization process
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- After Optimization -->
+            <div class="comparison-card after-card">
+              <div class="card-header">
+                <h3><i class="fas fa-rocket"></i> After Optimization</h3>
+              </div>
+              <div class="card-content">
+                <div class="metrics-placeholder">
+                  <div class="metric-item">
+                    <span class="metric-label">Total Inventory Value:</span>
+                    <span class="metric-value">--</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Storage Costs:</span>
+                    <span class="metric-value">--</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Turnover Rate:</span>
+                    <span class="metric-value">--</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="metric-label">Stock Efficiency:</span>
+                    <span class="metric-value">--</span>
+                  </div>
+                </div>
+                <div class="empty-state">
+                  <i class="fas fa-inbox"></i>
+                  <p>
+                    Optimized results will appear here after running the
+                    optimization process
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Improvement Summary -->
+          <div class="improvement-summary">
+            <h4><i class="fas fa-chart-bar"></i> Improvement Summary</h4>
+            <div class="summary-placeholder">
+              <p>
+                Improvement metrics and recommendations will be displayed here
+                after optimization
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>&copy; 2024 Themisto-Inventory Management System.</p>
+        <p>Contact us at: abinayashrigupta05@gmail.com</p>
+      </footer>
+    </div>
+  </body>
+</html>
